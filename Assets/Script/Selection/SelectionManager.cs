@@ -12,9 +12,6 @@ public class SelectionManager : MonoBehaviour
 
     public GameObject selectedObjeck;
 
-    public GameObject selectedEnemy;
-    public GameObject EmyHolder;
-
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -51,33 +48,6 @@ public class SelectionManager : MonoBehaviour
             var selectionTransform = hit.transform;
 
             InteractableObject SemuaInteract = selectionTransform.GetComponent<InteractableObject>();
-
-            EnemyAble enemyAble = selectionTransform.GetComponent<EnemyAble>();
-
-            if (enemyAble && enemyAble.playerInRange)
-            {
-                enemyAble.CanAttack = true;
-                selectedEnemy = enemyAble.gameObject;
-                EmyHolder.gameObject.SetActive(true);
-
-
-            }
-            else
-            {
-                if(selectedEnemy != null)
-                {
-                    selectedEnemy.gameObject.GetComponent<EnemyAble>().CanAttack = false;
-                    selectedEnemy = null;
-                    EmyHolder.gameObject.SetActive(false);
-                }
-
-
-
-            }
-
-
-
-
 
             if (SemuaInteract && SemuaInteract.PlayerInRange)
             {
