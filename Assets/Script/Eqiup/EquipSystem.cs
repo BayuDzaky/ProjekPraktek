@@ -136,7 +136,7 @@ public class EquipSystem : MonoBehaviour
 
         string selectedItemName = selectedItem.name.Replace("(Clone)", "");
         SelectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName + "_Model"),
-            new Vector3(-1.737f, -0.454f, 1.224f), Quaternion.Euler(34.078f, -18.911f, -10.168f));
+            new Vector3(-21.84016f, 2.584513f, -0.3723469f), Quaternion.Euler(-10.501f, -4.18f, -13.16f));
         SelectedItemModel.transform.SetParent(toolHolder.transform, false);
     }
 
